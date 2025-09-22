@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personaliza tu perfil</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="../imagenes/CA.png">
+</head>
+<body>
+
+  <div class="card">
+    <!-- 1. PORTADA -->
+    <label class="cover" id="coverLabel">
+      <input type="file" id="coverInput" accept="image/*">
+      <span class="overlay-text">Cambiar portada</span>
+    </label>
+    <!-- 2. AVATAR -->
+    <div class="avatar-wrapper">
+      <label class="avatar" id="avatarLabel">
+        <input type="file" id="avatarInput" accept="image/*">
+      </label>
+    </div>
+
+    <!-- 3. FORM -->
+    <form id="profileForm" autocomplete="off">
+      <h1>Personaliza tu perfil</h1>
+
+      <div class="form-group">
+        <label for="nickname">Apodo</label>
+        <input type="text" id="nickname" name="nickname" placeholder="Tu apodo público" required>
+      </div>
+
+      <div class="actions">
+        <button type="button" class="btn btn-secondary" id="skipBtn">Omitir</button>
+        <button type="submit" class="btn btn-primary">Guardar y continuar</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Supabase -->
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <!-- Tu JS -->
+  <script src="script.js"></script>
+</body>
+</html>

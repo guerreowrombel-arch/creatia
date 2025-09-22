@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recuperar Contraseña - Creatia</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="icon" type="image/png" href="../imagenes/CA.png">
+</head>
+<body>
+
+  <main>
+    <div class="container">
+      <h1>🔐 Recuperar Contraseña</h1>
+      <p>Ingresa tu correo electrónico registrado. Te enviaremos un enlace para restablecer tu contraseña.</p>
+
+      <form id="recoverForm">
+        <div class="form-group">
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" required placeholder="tu-correo@ejemplo.com">
+        </div>
+        <button type="submit" class="btn-primary">Enviar enlace de recuperación</button>
+      </form>
+
+      <p id="recoverMessage" class="message"></p>
+
+      <a href="javascript:history.back()" class="back-link">← Volver</a>
+    </div>
+  </main>
+
+  <!-- Supabase JS -->
+  <script src="correo_contraseña.js" stype="module"></script>
+
+</body>
+</html>

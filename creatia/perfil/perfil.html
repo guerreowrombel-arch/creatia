@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Perfil - Creatia</title>
+  <link rel="icon" type="image/png" href="../imagenes/CA.png">
+  <link rel="stylesheet" href="perfil.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="../imagenes/CA.png">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-top">
+    <!-- LOGO (columna 1) -->
+    <div class="logo">
+      <a href="../codigos/creatia.html">
+        <img src="../imagenes/CREATIA.webp" alt="Logo Creatia" class="logo-img">
+      </a>
+    </div>
+
+    <!-- NAV VACÍO (columna 2, para centrar) -->
+    <nav></nav>
+
+    <!-- ÍCONO CUENTA + MENÚ EMERGENTE (columna 3) -->
+    <div class="cuenta-container">
+      <a href="#" class="icono-cuenta" aria-label="Menú de cuenta">
+        <img src="../imagenes/boton-de-cuenta-redonda-con-usuario-dentro.png" alt="Cuenta">
+      </a>
+      <div class="cuenta-menu" id="cuentaMenu">
+        <div class="cuenta-cover"></div>
+        <div class="cuenta-avatar">
+          <img src="" alt="Avatar" id="menuAvatar">
+        </div>
+        <div class="cuenta-actions">
+          <button id="logoutBtn">Cerrar sesión</button>
+        </div>
+      </div>
+    </div>
+</header>
+
+  <!-- SECCIÓN BIENVENIDO -->
+  <section id="bienvenido" class="bienvenido-section">
+    <h2>Bienvenido a tu perfil, <span id="nombreUsuario">...</span> 👋</h2>
+  </section>
+
+  <!-- CONTENEDOR DE PERFIL + PROYECTOS (horizontal) -->
+  <div class="perfil-proyectos-container">
+    
+    <!-- SECCIÓN PERFIL -->
+    <section id="perfil" class="perfil-section">
+      <div class="portada-perfil" id="portadaPerfil"></div>
+      <div class="avatar-centrado">
+        <img src="" alt="Avatar" id="avatarPerfil">
+      </div>
+      <div class="info-perfil">
+        <h3 id="apodoUsuario">...</h3>
+        <p><strong>Correo:</strong> <span id="emailUsuario">...</span></p>
+        <div class="acciones-perfil">
+          <button onclick="window.location.href='../personalizacion/personalizacion.html'" class="btn btn-editar">
+            <i class="fas fa-pen"></i> Editar perfil
+          </button>
+          <button onclick="window.location.href='../correo/cambiar_correo.html'" class="btn btn-actualizar">
+            <i class="fas fa-envelope"></i> Actualizar correo
+          </button>
+          <button onclick="window.location.href='../contraseña/verificar-contraseña.html'" class="btn btn-password">
+            <i class="fas fa-key"></i> Cambiar contraseña
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN PROYECTOS -->
+    <section id="proyectos" class="proyectos-section">
+      <h2>Estos son tus proyectos 🎨</h2>
+      <div class="proyectos-lista" id="proyectosLista">
+        <!-- Aquí se cargarán los proyectos desde Supabase -->
+      </div>
+      <button onclick="window.location.href='../crear-logo/crear.html'" class="btn btn-nuevo">
+        <i class="fas fa-plus"></i> Crear nuevo proyecto
+      </button>
+    </section>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-links">
+      <a href="#">Términos y Condiciones</a> |
+      <a href="#">Política de Privacidad</a> |
+      <a href="#">Contacto Académico</a>
+    </div>
+    <p>&copy; 2024 Creatia — Proyecto Final de Carrera | Universidad Nacional</p>
+    <p>Desarrollado con ❤️ por estudiantes, para estudiantes.</p>
+  </footer>
+
+  <!-- Supabase y JS -->
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <script src="perfil.js"></script>
+</body>
+</html>

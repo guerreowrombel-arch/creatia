@@ -1,0 +1,265 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ==== Fondo con blur === */
+body {
+  background: linear-gradient(135deg, #ff1a1a 0%, #000000 100%); /* rojo ➝ negro */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;   /* ✅ para que se mueva con scroll */
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: url("../imagenes/modern_circle_shape_abstract_background_white.jpg") no-repeat center center/cover;
+  filter: blur(8px);
+  z-index: -1;
+}
+
+/* ==== Caja contendora con efecto glass === */
+.container {
+  display: flex;
+  width: 900px;
+  background: rgba(255, 255, 255, 0.85); /* translúcido */
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  backdrop-filter: blur(6px);
+}
+
+/* ==== Panel izquierdo rojo === */
+.left-panel {
+  flex: 1;
+  background: linear-gradient(to bottom right, #d60000, #a30000);
+  color: white;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.left-panel h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.left-panel p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.features {
+  list-style: none;
+}
+
+.features li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+.features i {
+  margin-right: 12px;
+  color: #ffffff; /* dorado */
+  font-size: 1.2rem;
+}
+
+/* ==== Panel derecho (glass blanco) === */
+.right-panel {
+  flex: 1;
+  padding: 40px;
+  background: rgba(255,255,255,0.9);
+}
+
+.right-panel h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+.subtitle {
+  text-align: center;
+  color: #777;
+  margin-bottom: 40px;
+  font-size: 1rem;
+}
+
+/* ==== Formularios === */
+.form-group {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #555;
+}
+
+.input-with-icon {
+  position: relative;
+}
+
+.input-with-icon i {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #777;
+}
+
+.form-control {
+  width: 100%;
+  padding: 15px 15px 15px 45px;
+  border: 2px solid #e1e1e1;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: all 0.3s;
+  outline: none;
+}
+
+.form-control:focus {
+  border-color: #d60000;
+  box-shadow: 0 0 0 3px rgba(214,0,0,0.3);
+}
+
+.form-control.error {
+  border-color: #e74c3c;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 14px;
+  margin-top: 6px;
+  display: none;
+}
+
+/* Recordarme y olvidar contraseña */
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+}
+
+.remember-me input {
+  margin-right: 8px;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.forgot-password {
+  color: #777;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.forgot-password:hover {
+  color: #d60000;
+  text-decoration: underline;
+}
+
+/* ==== Botón login red-black === */
+.btn {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(to right, #d60000, #000000);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.7);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* Enlace de registro */
+.register-link {
+  text-align: center;
+  margin-top: 25px;
+  color: #777;
+  font-size: 15px;
+}
+
+.register-link a {
+  color: #d60000;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.register-link a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+/* === Responsive === */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+  .left-panel {
+    padding: 30px;
+  }
+  .right-panel {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .left-panel h1 {
+    font-size: 2rem;
+  }
+  
+  .left-panel p {
+    font-size: 1rem;
+  }
+  
+  .right-panel h2 {
+    font-size: 1.8rem;
+  }
+  
+  .features {
+    font-size: 0.9rem;
+  }
+  
+  .remember-forgot {
+    flex-direction: column;
+    gap: 15px;
+  }
+}

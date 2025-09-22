@@ -1,0 +1,814 @@
+/* ===========================
+   Fuente & Reset
+=========================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #111;
+  line-height: 1.7;
+  background: none;
+  position: relative;
+}
+
+/* ==== FONDO GLOBAL DESDIFUMADO === */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../imagenes/modern_circle_shape_abstract_background_white.jpg") no-repeat center center / cover;
+  filter: blur(8px);
+  z-index: -1;
+  opacity: 0.95;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul { list-style: none; }
+a { text-decoration: none; color: inherit; }
+
+/* ===========================
+   HEADER (CON TEXTURA ROJA)
+=========================== */
+header {
+  background: url("../imagenes/1e35bcea-d3df-4d69-8e24-c4770818404e.jpg") no-repeat center center / cover;
+  color: #000000;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.logo img {
+  height: 40px;
+}
+
+/* Menú de navegación — UL con clase .nav-menu */
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu li a {
+  font-weight: 500;
+  color: #000;
+  transition: color 0.3s;
+  position: relative;
+}
+
+.nav-menu li a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #d60000;
+  transition: width 0.3s;
+}
+
+.nav-menu li a:hover {
+  color: #d60000;
+}
+
+.nav-menu li a:hover::after {
+  width: 100%;
+}
+
+.icono-cuenta img {
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.icono-cuenta img:hover {
+  transform: scale(1.05);
+}
+
+/* Botón hamburguesa */
+.hamburger {
+  display: none;
+  width: 30px;
+  height: 24px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1002;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #000;
+  margin: 3px 0;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+/* ===========================
+   SECCIONES GENERALES
+=========================== */
+section {
+  padding: 5rem 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  backdrop-filter: blur(6px);
+  margin-bottom: 3rem;
+}
+
+h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #000;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #d60000;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+p {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* ===========================
+   HERO SECTION
+=========================== */
+.hero-section {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  margin-bottom: 0;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #000;
+  line-height: 1.2;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.btn-cta {
+  background: linear-gradient(to right, #d60000, #000);
+  color: white;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: inline-block;
+}
+
+.btn-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.hero-image {
+  flex: 1;
+  text-align: center;
+}
+
+.hero-image img {
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  max-width: 90%;
+}
+
+/* ===========================
+   FEATURES
+=========================== */
+.features {
+  background: rgba(255,255,255,0.85);
+}
+
+.feature-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.feature-card {
+  background: #fff;
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.feature-card img {
+  width: 80px;
+  margin: 0 auto 1.5rem; /* 👈 CENTRADO + margen inferior */
+  display: block;        /* 👈 Opcional, pero recomendado para evitar alineación inline */
+}
+
+.feature-card h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #d60000;
+}
+
+.feature-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* ===========================
+   GALERÍA DE IMÁGENES
+=========================== */
+.demo {
+  background: rgba(248,248,248,0.85);
+}
+
+.demo-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.demo-gallery img {
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.demo-gallery img:hover {
+  transform: scale(1.03);
+}
+
+/* ===========================
+   EQUIPO — IMÁGENES CENTRADAS
+=========================== */
+.equipo {
+  background: rgba(255,255,255,0.85);
+}
+
+.team-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.team-member {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.team-member img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  margin: 0 auto 1.5rem; /* 👈 AQUÍ está el cambio clave: centrado + margen inferior */
+  display: block; /* Asegura que sea bloque para que margin: auto funcione */
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover img {
+  transform: scale(1.05);
+}
+
+.team-member h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #000;
+}
+
+.team-member p {
+  font-size: 0.95rem;
+  color: #d60000;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.bio {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* ===========================
+   TESTIMONIOS
+=========================== */
+.testimonials {
+  background: rgba(240,240,240,0.85);
+}
+
+.testimonial-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.testimonial-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  position: relative;
+  display: flex;           /* 👈 Hacemos el card un contenedor flex */
+  align-items: flex-start; /* 👈 Alineamos al inicio (para que cite no suba) */
+  gap: 1.5rem;             /* 👈 Espacio entre imagen y texto */
+}
+
+.testimonial-card img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid #d60000;
+  flex-shrink: 0;          /* 👈 Evita que la imagen se encoja */
+}
+
+.testimonial-card blockquote {
+  font-style: italic;
+  font-size: 1.05rem;
+  color: #333;
+  margin: 0;               /* 👈 Quitamos margen inferior por defecto */
+  line-height: 1.6;
+}
+
+.testimonial-card cite {
+  font-weight: 600;
+  color: #d60000;
+  font-size: 0.95rem;
+  display: block;
+  margin-top: 1rem;        /* 👈 Separación entre blockquote y cite */
+}
+
+/* ===========================
+   CTA FINAL
+=========================== */
+.cta-final {
+  text-align: center;
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, #d60000 0%, #000 100%);
+  color: white;
+  border-radius: 20px;
+  margin: 4rem auto;
+  max-width: 900px;
+  backdrop-filter: blur(4px);
+}
+
+.cta-final h2 {
+  color: white;
+}
+
+.cta-final .btn-cta {
+  background: white;
+  color: #d60000;
+  margin-top: 1.5rem;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+footer {
+  background: rgba(0,0,0,0.85);
+  color: #fff;
+  padding: 3rem 5% 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  backdrop-filter: blur(6px);
+}
+
+.footer-links {
+  margin-bottom: 1rem;
+}
+
+.footer-links a {
+  color: #FFD700;
+  margin: 0 10px;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* ===========================
+   ANIMACIONES
+=========================== */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===========================
+   RESPONSIVE — ¡IMPORTANTE!
+=========================== */
+@media (max-width: 768px) {
+
+  /* Reorganizar hero */
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text {
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .feature-card,
+  .team-member,
+  .testimonial-card {
+    padding: 1.5rem;
+  }
+
+  /* === MENÚ HAMBURGUESA Y NAVEGACIÓN MÓVIL === */
+
+  .hamburger {
+    display: flex; /* visible en móvil */
+    z-index: 1002;
+  }
+
+  /* Ocultar menú horizontal y convertirlo en overlay lateral */
+  nav .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1001;
+    padding: 3rem 2rem;
+    box-shadow: -6px 0 25px rgba(0,0,0,0.12);
+    border-left: 1px solid rgba(0,0,0,0.05);
+    list-style: none;
+  }
+
+  nav .nav-menu.active {
+    right: 0;
+  }
+
+  /* Estilo de enlaces en móvil */
+  nav .nav-menu li {
+    margin: 0.5rem 0;
+  }
+
+  nav .nav-menu li a {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    text-align: center;
+  }
+
+  /* Animación hamburguesa → X (usa solo 3 spans, ignora el 4to si existe) */
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+    background: #d60000;
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+    background: #d60000;
+  }
+
+  /* Si hay un 4to span, ocúltalo en móvil */
+  .hamburger span:nth-child(4) {
+    display: none;
+  }
+
+}
+
+/* ==== MENÚ DE CUENTA ==== */
+.cuenta-container {
+  position: relative;
+  display: inline-block;
+}
+
+.cuenta-menu {
+  position: absolute;
+  top: 65px;
+  right: 0;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  width: 300px;
+  padding: 8px;
+  display: none;
+  z-index: 1000;
+  font-family: 'Poppins', sans-serif;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  animation: menuEntrance 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  overflow: hidden;
+  transform-origin: top right;
+}
+
+@keyframes menuEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.cuenta-cover {
+  width: 100%;
+  height: 90px;
+  background: linear-gradient(135deg, #d60000, #000);
+  border-radius: 16px 16px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.cuenta-cover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.1), transparent 70%);
+}
+
+.cuenta-avatar {
+  position: relative;
+  margin-top: -45px;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+}
+
+.cuenta-avatar img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 4px solid #FFD700;
+  background: #fff;
+  object-fit: cover;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cuenta-avatar img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+.cuenta-info {
+  text-align: center;
+  padding: 20px 10px 10px;
+  color: #000;
+}
+
+.cuenta-info h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  color: #000;
+}
+
+.cuenta-info p {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 4px 0 0;
+}
+
+.cuenta-actions {
+  margin-top: 5px;
+  padding: 5px 0;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.cuenta-actions button {
+  width: 100%;
+  padding: 14px 20px;
+  border: none;
+  background: transparent;
+  text-align: left;
+  font-size: 1rem;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-weight: 500;
+  border-radius: 12px;
+  margin: 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cuenta-actions button:hover {
+  background: rgba(214, 0, 0, 0.06);
+  transform: translateX(4px);
+  color: #d60000;
+}
+
+.cuenta-actions button i {
+  font-size: 1.1rem;
+  width: 20px;
+  text-align: center;
+}
+
+/* ==== ANIMACIÓN HERO ==== */
+#inicio {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: heroEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.2s;
+}
+
+@keyframes heroEntrance {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===========================
+   SECCIÓN DETRÁS DE ESCENAS (SOLO USUARIOS LOGUEADOS)
+=========================== */
+.tech-section {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 5rem 5%;
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  backdrop-filter: blur(6px);
+}
+
+.tech-section h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #000;
+  position: relative;
+}
+
+.tech-section h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #d60000;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.tech-section p {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.tech-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.tech-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.tech-card img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.tech-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #d60000;
+}
+
+.tech-card p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 0;
+}
+
+/* Asegurar que .scroll-reveal funcione en .tech-section */
+.tech-section.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.tech-section.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive para tech cards */
+@media (max-width: 768px) {
+  .tech-card {
+    padding: 1.5rem;
+  }
+
+  .tech-card img {
+    max-height: 160px;
+  }
+
+  .tech-card h3 {
+    font-size: 1.2rem;
+  }
+}

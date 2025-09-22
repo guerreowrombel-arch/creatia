@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Verificar Contraseña - Creatia</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="stilos.css">
+  <link rel="icon" type="image/png" href="../imagenes/CA.png">
+</head>
+<body>
+  <div class="container">
+    <!-- Panel Izquierdo: Datos del Usuario -->
+    <div class="user-panel">
+      <!-- 👇 Envuelto en user-content, sin cover-placeholder -->
+      <div class="user-content">
+        <div class="avatar-placeholder" id="userAvatar"></div>
+        <div class="user-info">
+          <h3 id="userNickname">Cargando...</h3>
+          <p id="userEmail">Cargando correo...</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel Derecho: Formulario -->
+    <div class="form-panel">
+      <h1>🔐 Verificar Identidad</h1>
+      <p style="text-align: center; margin-bottom: 2rem;">Por seguridad, ingresa tu contraseña actual para continuar.</p>
+
+      <form id="verifyForm">
+        <div class="form-group">
+          <label for="currentPassword">Contraseña actual</label>
+          <input type="password" id="currentPassword" required placeholder="Ingresa tu contraseña">
+        </div>
+        <button type="submit" class="btn-primary">Verificar y Continuar</button>
+      </form>
+
+      <p id="verifyMessage" class="message"></p>
+
+      <a href="javascript:history.back()" class="back-link">← Volver</a>
+    </div>
+  </div>
+
+  <!-- Supabase JS -->
+  <script src="veri_contra.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cambiar Correo - Creatia</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="../imagenes/CA.png">
+</head>
+<body>
+
+  <main>
+    <div class="container">
+      <h1>✉️ Cambiar Correo Electrónico</h1>
+      <p>Ingresa tu nuevo correo. Te enviaremos un enlace de confirmación para completar el cambio.</p>
+
+      <form id="emailForm">
+        <div class="form-group">
+          <label for="newEmail">Nuevo correo electrónico</label>
+          <input type="email" id="newEmail" required placeholder="tu-nuevo-correo@ejemplo.com">
+        </div>
+        <button type="submit" class="btn-primary">Enviar enlace de confirmación</button>
+      </form>
+
+      <p id="emailMessage" class="message"></p>
+    </div>
+  </main>
+
+  <!-- Opcional: Footer -->
+  <footer>
+    © 2025 Creatia. Todos los derechos reservados.
+  </footer>
+
+  <!-- Supabase JS -->
+  <script type="module" src="cambiar_correo.js"></script>
+
+</body>
+</html>

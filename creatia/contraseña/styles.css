@@ -1,0 +1,329 @@
+ /* ===========================
+       Fuente & Reset + Fondo Global
+    =========================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #111;
+      line-height: 1.7;
+      background: none;
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+
+    /* FONDO DESDIFUMADO */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("../imagenes/modern_circle_shape_abstract_background_white.jpg") no-repeat center center / cover;
+      filter: blur(8px);
+      z-index: -1;
+      opacity: 0.95;
+    }
+
+    /* ===========================
+       CONTENEDOR PRINCIPAL (2 COLUMNAS)
+    =========================== */
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      max-width: 1000px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    /* Panel izquierdo - Datos de usuario */
+    .user-panel {
+      position: relative;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: rgba(248, 248, 248, 0.6);
+      border-right: 1px solid rgba(0,0,0,0.05);
+      overflow: hidden;
+    }
+
+    .user-panel::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #d60000, #000);
+      background-size: cover;
+      background-position: center;
+      z-index: 0;
+      border-radius: 20px 0 0 20px;
+      filter: brightness(0.7);
+    }
+
+    .user-panel.has-cover::before {
+      background-image: var(--cover-url);
+    }
+
+    .user-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 90%;
+    }
+
+    .avatar-placeholder {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      background: #ddd url('../imagenes/boton-de-cuenta-redonda-con-usuario-dentro.png') center/cover no-repeat;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+      margin: 0 auto 1.5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .user-info h3 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #fff;
+      margin: 0;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .user-info p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.85);
+      margin: 0.3rem 0 0;
+      font-weight: 400;
+    }
+
+    /* Panel derecho - Formulario */
+    .form-panel {
+      padding: 3rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .form-panel h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #000;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .form-panel h1::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: #d60000;
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: #333;
+    }
+
+    /* Contenedor input + toggle */
+    .password-wrapper {
+      position: relative;
+      width: 100%;
+    }
+
+    .password-wrapper input {
+      width: 100%;
+      padding: 14px 50px 14px 14px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-family: 'Poppins', sans-serif;
+      transition: all 0.3s;
+    }
+
+    .password-wrapper input:focus {
+      outline: none;
+      border-color: #d60000;
+      box-shadow: 0 0 0 3px rgba(214, 0, 0, 0.1);
+    }
+
+    .toggle-password {
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #aaa;
+      transition: all 0.2s ease;
+    }
+
+    .toggle-password:hover {
+      color: #d60000;
+      background: rgba(214, 0, 0, 0.08);
+    }
+
+    /* Medidor de fortaleza */
+    .password-strength {
+      margin-top: 1rem;
+      text-align: left;
+    }
+
+    .strength-bar {
+      width: 100%;
+      height: 6px;
+      background: #eee;
+      border-radius: 3px;
+      overflow: hidden;
+      margin-bottom: 0.5rem;
+      position: relative;
+    }
+
+    .bar-fill {
+      height: 100%;
+      width: 0%;
+      border-radius: 3px;
+      transition: all 0.3s ease, background-color 0.3s ease;
+    }
+
+    .strength-text {
+      font-size: 0.85rem;
+      font-weight: 500;
+      display: block;
+      transition: color 0.3s ease;
+    }
+
+    .weak .bar-fill { background: #d60000; }
+    .weak .strength-text { color: #d60000; }
+
+    .medium .bar-fill { background: #ffc107; }
+    .medium .strength-text { color: #856404; }
+
+    .strong .bar-fill { background: #28a745; }
+    .strong .strength-text { color: #28a745; }
+
+    /* Botón centrado */
+    .btn-primary {
+      background: linear-gradient(135deg, #d60000, #000);
+      color: white;
+      padding: 14px 32px;
+      border: none;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: block;
+      margin: 1.5rem auto 0;
+      text-align: center;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+
+    .message {
+      margin-top: 1.5rem;
+      padding: 12px;
+      border-radius: 10px;
+      font-weight: 500;
+      display: none;
+      text-align: center;
+    }
+
+    .message.error {
+      background: #f8d7da;
+      color: #721c24;
+      display: block;
+    }
+
+    .message.success {
+      background: #d4edda;
+      color: #155724;
+      display: block;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 1.5rem;
+      color: #d60000;
+      text-decoration: none;
+      font-weight: 500;
+      transition: opacity 0.3s;
+      text-align: center;
+    }
+
+    .back-link:hover {
+      opacity: 0.8;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .user-panel {
+        border-right: none;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        padding-bottom: 3rem;
+      }
+
+      .avatar-placeholder {
+        width: 80px;
+        height: 80px;
+      }
+
+      .form-panel {
+        padding: 2rem 1.5rem;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      color: #666;
+      font-size: 0.9rem;
+      margin-top: 3rem;
+    }

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Creatia</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="../imagenes/CA.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-top">
+      <div class="logo">
+        <img src="../imagenes/CREATIA.webp" alt="Logo Creatia" class="logo-img">
+      </div>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#funcionalidades">Funcionalidades</a></li>
+          <li><a href="#equipo">Equipo</a></li>
+          <li><a href="#testimonios">Testimonios</a></li>
+          <!-- 👇 Botón "Crear" - oculto por defecto, se muestra si hay sesión -->
+          <li class="nav-crear" id="navCrear" style="display: none;">
+            <a href="../codigos/crear.html" class="btn-crear">Crear</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="cuenta-container">
+        <a href="#" class="icono-cuenta" aria-label="Acceder a mi cuenta">
+          <img src="../imagenes/boton-de-cuenta-redonda-con-usuario-dentro.png" alt="Cuenta">
+        </a>
+        <div class="cuenta-menu" id="cuentaMenu">
+          <div class="cuenta-cover"></div>
+          <div class="cuenta-avatar">
+            <img src="../imagenes/boton-de-cuenta-redonda-con-usuario-dentro.png" alt="Avatar">
+          </div>
+          <div class="cuenta-actions">
+            <button onclick="window.location.href='../inicio_sesion/iniciodesesion.html'">Iniciar sesión</button>
+            <button onclick="window.location.href='http://127.0.0.1:5500/cuenta/index.html'">Regístrate</button>
+          </div>
+        </div>
+      </div>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-overlay"></div>
+
+  <!-- HERO SECTION -->
+  <section id="inicio" class="hero-section scroll-reveal">
+    <div class="hero-text">
+      <h1>Plataforma Creatia 🚀</h1>
+      <p>Una red universitaria para conectar ideas, proyectos y talento. Donde estudiantes construyen juntos el futuro.</p>
+      <!-- 👇 Este botón cambiará a "Crea ahora" si el usuario está logueado -->
+      <button id="heroCtaButton" onclick="window.location.href='../cuenta/index.html'" class="btn btn-cta">Únete ahora</button>
+    </div>
+    <div class="hero-image">
+      <img src="../imagenes/CREATIA.webp" alt="Plataforma Creatia en acción">
+    </div>
+  </section>
+
+  <!-- FUNCIONALIDADES -->
+  <section id="funcionalidades" class="features scroll-reveal">
+    <h2>Funcionalidades Clave</h2>
+    <div class="feature-list">
+      <div class="feature-card">
+        <img src="../imagenes/perfil.png" alt="Perfil personalizable">
+        <h3>Perfil Personalizable</h3>
+        <p>Crea tu identidad digital con portada, avatar y apodo. Muestra tus intereses y habilidades.</p>
+      </div>
+      <div class="feature-card">
+        <img src="../imagenes/colaboracion.png" alt="Colaboración en tiempo real">
+        <h3>Colaboración Inteligente</h3>
+        <p>Usa la IA de forma intuitiva a la hora de agregar objetos en tus proyectos.</p>
+      </div>
+      <div class="feature-card">
+        <img src="../imagenes/notificacion.png" alt="Notificaciones en tiempo real">
+        <h3>Notificaciones en Tiempo Real</h3>
+        <p>Mantente al tanto de interacciones, mensajes y novedades sin perder el foco en tu trabajo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA DE PANTALLAS -->
+  <section id="galeria" class="demo scroll-reveal">
+    <h2>Un vistazo a nuestra plataforma</h2>
+    <div class="demo-gallery">
+      <img src="../imagenes/captura-personalizacion.png" alt="Pantalla principal">
+      <img src="../imagenes/captura-perfil.png" alt="Gestión de proyectos">
+      <img src="../imagenes/Sin título-2.png" alt="Chat colaborativo">
+    </div>
+  </section>
+
+  <!-- EQUIPO -->
+  <section id="equipo" class="equipo scroll-reveal">
+    <h2>Nuestro Equipo</h2>
+    <p>Estudiantes apasionados por la tecnología, el diseño y la innovación educativa.</p>
+    <div class="team-cards">
+      <div class="team-member">
+        <img src="../imagenes/hombre.png" alt="Ana Pérez">
+        <h4>Antony Abad</h4>
+        <p>Gestión de Proyectos</p>
+        <p class="bio">Lidera la coordinación del equipo y asegura que cada fase se cumpla con calidad.</p>
+      </div>
+      <div class="team-member">
+        <img src="../imagenes/usuario.png" alt="Carlos Ruiz">
+        <h4>Wrombel Guerrero</h4>
+        <p>Desarrollo Backend</p>
+        <p class="bio">Arquitecto de la base de datos y lógica de negocio. Apasionado por Supabase y SQL.</p>
+      </div>
+      <div class="team-member">
+        <img src="../imagenes/hombre (1).png" alt="Lucía Gómez">
+        <h4>Alejandro Calero</h4>
+        <p>Diseño UX/UI</p>
+        <p class="bio">Diseña interfaces intuitivas y estéticas. Cree que la belleza debe ser funcional.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section id="testimonios" class="testimonials scroll-reveal">
+    <h2>Lo que dicen nuestros usuarios</h2>
+    <div class="testimonial-list">
+      <div class="testimonial-card">
+        <img src="../imagenes/nina.png" alt="Usuario 1">
+        <blockquote>“Gracias a Creatia encontré a mis compañeros de proyecto final. ¡Sin esto no lo hubiéramos logrado!”</blockquote>
+      </div>
+      <div class="testimonial-card">
+        <img src="../imagenes/jugador.png" alt="Usuario 2">
+        <blockquote>“La interfaz es tan limpia que me da gusto entrar todos los días. ¡Y el chat en vivo es genial!”</blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL - SOLO MOSTRAR SI NO HAY SESIÓN -->
+  <section id="ctaFinal" class="cta-final scroll-reveal">
+    <h2>¿Listo para empezar? 🌟</h2>
+    <button onclick="window.location.href='../cuenta/index.html'" class="btn btn-cta">Crea tu cuenta gratis</button>
+  </section>
+
+  <!-- SECCIÓN DETRÁS DE ESCENAS - SOLO MOSTRAR SI HAY SESIÓN -->
+  <section id="techSection" class="tech-section scroll-reveal" style="display: none;">
+    <h2>🚀 Detrás de Creatia: Nuestro Trabajo como Desarrolladores</h2>
+    <p>Este proyecto fue construido con pasión, código limpio y arquitectura sólida. Aquí te mostramos cómo lo hicimos.</p>
+
+    <div class="tech-grid">
+      <div class="tech-card">
+        <img src="../imagenes/front-end.png" alt="Código frontend">
+        <h3>Frontend Moderno</h3>
+        <p>HTML5, CSS3, JavaScript ES6+. Diseño responsive y animaciones fluidas.</p>
+      </div>
+      <div class="tech-card">
+        <img src="../imagenes/image.png" alt="Esquema Supabase">
+        <h3>Base de Datos en Supabase</h3>
+        <p>Tablas relacionales: usuarios, perfiles, proyectos. Autenticación segura.</p>
+      </div>
+      <div class="tech-card">
+        <img src="../imagenes/exportar.png" alt="Storage Supabase">
+        <h3>Almacenamiento de Imágenes</h3>
+        <p>Avatares, portadas y logos guardados en buckets públicos de Supabase.</p>
+      </div>
+      <div class="tech-card">
+        <img src="../imagenes/login.png" alt="Flujo de autenticación">
+        <h3>Autenticación Compleja</h3>
+        <p>Registro, login, recuperación, cambio de contraseña, verificación en 2 pasos.</p>
+      </div>
+      <div class="tech-card">
+        <img src="../imagenes/glassmorfin.png" alt="Diseño responsive">
+        <h3>Diseño Glassmorphism</h3>
+        <p>Fondos desenfocados, efectos glass, animaciones CSS y transiciones suaves.</p>
+      </div>
+      <div class="tech-card">
+        <img src="../imagenes/hosting.png" alt="Deploy en Vercel">
+        <h3>Despliegue y Hosting</h3>
+        <p>Proyecto desplegado con CI/CD, dominio personalizado y SSL.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="scroll-reveal">
+    <div class="footer-links">
+      <a href="#">Términos y Condiciones</a> |
+      <a href="#">Política de Privacidad</a> |
+      <a href="#">Contacto Académico</a>
+    </div>
+    <p>&copy; 2024 Creatia — Proyecto Final de Carrera | Universidad Nacional</p>
+    <p>Desarrollado con ❤️ por estudiantes, para estudiantes.</p>
+  </footer>
+
+  <!-- Scripts (los usarás después) -->
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <script src="app.js" defer></script>
+
+</body>
+</html>

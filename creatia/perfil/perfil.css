@@ -1,0 +1,389 @@
+/* ===========================
+   Fuente & Reset
+=========================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #111;
+  line-height: 1.7;
+}
+
+/* ==== FONDO GLOBAL === */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), 
+    url("../imagenes/modern_circle_shape_abstract_background_white.jpg") no-repeat center center / cover;
+  filter: blur(8px);
+  z-index: -1;
+  opacity: 0.95;
+}
+
+/* ===========================
+   HEADER CON TEXTURA + ESTILO INICIO.HTML
+=========================== */
+/* ===========================
+   HEADER CON TEXTURA + ESTILO INICIO.HTML
+=========================== */
+header {
+  background: url("../imagenes/1e35bcea-d3df-4d69-8e24-c4770818404e.jpg") no-repeat center center / cover;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #000;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.header-top {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; /* logo | nav vacío | cuenta */
+  align-items: center;
+  gap: 8px;
+  padding: 6px 1.2rem;                 /* compacto como en inicio */
+  min-height: 48px;                    /* altura fija */
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Logo en columna 1 */
+.logo {
+  grid-column: 1;
+  justify-self: start;
+}
+.logo img {
+  height: clamp(36px, 6vh, 56px);      /* responsivo como en inicio */
+  width: auto;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+/* Nav vacío en columna 2 (para centrar) */
+nav {
+  grid-column: 2;
+  justify-self: center;
+}
+
+/* Cuenta en columna 3 */
+.cuenta-container {
+  grid-column: 3;
+  justify-self: end;
+  display: inline-block;
+  position: relative;
+}
+
+.icono-cuenta img {
+  height: clamp(28px, 5vh, 36px);      /* ícono compacto */
+  width: auto;
+  object-fit: contain;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.icono-cuenta img:hover {
+  transform: scale(1.05);
+}
+
+.cuenta-container {
+  position: relative;
+  display: inline-block;
+}
+
+.cuenta-menu {
+  position: absolute;
+  top: 65px;
+  right: 0;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+  width: 300px;
+  padding: 8px;
+  display: none;
+  z-index: 1000;
+  font-family: 'Poppins', sans-serif;
+  border: 1px solid rgba(255,255,255,0.3);
+  animation: menuEntrance 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  overflow: hidden;
+  transform-origin: top right;
+}
+
+@keyframes menuEntrance {
+  0% { opacity: 0; transform: scale(0.9) translateY(-10px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.cuenta-cover {
+  width: 100%;
+  height: 90px;
+  background: linear-gradient(135deg, #d60000, #000);
+  border-radius: 16px 16px 0 0;
+}
+
+.cuenta-avatar {
+  position: relative;
+  margin-top: -45px;
+  display: flex;
+  justify-content: center;
+}
+.cuenta-avatar img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 4px solid #FFD700;
+  background: #fff;
+  object-fit: cover;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.cuenta-actions button {
+  width: 100%;
+  padding: 14px 20px;
+  border: none;
+  background: transparent;
+  text-align: left;
+  font-size: 1rem;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-weight: 500;
+  border-radius: 12px;
+  margin: 4px 0;
+}
+.cuenta-actions button:hover {
+  background: rgba(214, 0, 0, 0.06);
+  color: #d60000;
+}
+
+/* ===========================
+   SECCIÓN BIENVENIDO
+=========================== */
+.bienvenido-section {
+  padding: 3rem 5%;
+  text-align: center;
+  background: rgba(255,255,255,0.85);
+  margin: 2rem auto 0;
+  max-width: 1200px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  backdrop-filter: blur(6px);
+}
+.bienvenido-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000;
+}
+
+/* ===========================
+   CONTENEDOR HORIZONTAL PERFIL + PROYECTOS
+=========================== */
+.perfil-proyectos-container {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem 5%;
+  max-width: 1400px;
+  margin: 2rem auto;
+}
+
+/* ===========================
+   SECCIÓN PERFIL
+=========================== */
+.perfil-section {
+  flex: 1;
+  background: rgba(255,255,255,0.85);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  backdrop-filter: blur(6px);
+}
+
+.portada-perfil {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(135deg, #d60000, #000);
+  border-radius: 16px;
+  margin-bottom: -60px;
+  background-size: cover;
+  background-position: center;
+}
+
+.avatar-centrado {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.avatar-centrado img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid white;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  object-fit: cover;
+}
+
+.info-perfil h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #d60000;
+}
+
+.info-perfil p {
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.acciones-perfil {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.btn {
+  padding: 14px 20px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.btn-editar {
+  background: linear-gradient(to right, #d60000, #000);
+  color: white;
+}
+.btn-editar:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+.btn-actualizar {
+  background: #f8f9fa;
+  color: #d60000;
+  border: 1px solid #d60000;
+}
+.btn-actualizar:hover {
+  background: #ffebee;
+}
+.btn-password {
+  background: #f8f9fa;
+  color: #6c757d;
+  border: 1px solid #6c757d;
+}
+.btn-password:hover {
+  background: #f1f3f5;
+}
+
+/* ===========================
+   SECCIÓN PROYECTOS
+=========================== */
+.proyectos-section {
+  flex: 1;
+  background: rgba(255,255,255,0.85);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  backdrop-filter: blur(6px);
+}
+.proyectos-section h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #000;
+  text-align: center;
+}
+
+.proyectos-lista {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.proyecto-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: center;
+}
+.proyecto-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+.proyecto-card h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #000;
+}
+.proyecto-card p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.btn-nuevo {
+  background: linear-gradient(to right, #d60000, #000);
+  color: white;
+  width: 100%;
+  padding: 16px;
+  font-size: 1.1rem;
+}
+.btn-nuevo:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+footer {
+  background: rgba(0,0,0,0.85);
+  color: #fff;
+  padding: 2rem 5%;
+  text-align: center;
+  font-size: 0.9rem;
+  backdrop-filter: blur(6px);
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 768px) {
+  .perfil-proyectos-container {
+    flex-direction: column;
+  }
+  .header-top {
+    padding: 6px 1rem; /* ajuste móvil */
+  }
+}
+
+.footer-links {
+  margin-bottom: 1rem;
+}
+.footer-links a {
+  color: #FFD700;
+  margin: 0 10px;
+  font-weight: 500;
+}
+.footer-links a:hover {
+  text-decoration: underline;
+}
